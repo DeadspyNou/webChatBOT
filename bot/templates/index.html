@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CHAT BOT</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <img class="dBOT" src="{% static "chatimg/deadspyBOT.png"%}">
+    <style>
+        body {
+          background-image: url("/static/chatimg/519164.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+    </style>
+    <div class="chatbox">
+        <div class="chatlogs">
+        </div>
+        <div class="chat-form">
+            <form action="received_message">
+                <input type="text" name="your_message" placeholder="Type Something To Start....." id="">
+                <input type="submit" value="SEND">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

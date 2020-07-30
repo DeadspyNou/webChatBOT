@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>deadspyBOT</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script>
+        window.onload=function(){
+            var element =document.getElementsByClassName('chatlogs')[0];
+            if ( element )
+            {
+                element.scrollTop=element.scrollHeight;
+            }
+        } 
+    </script>
+</head>
+<body>
+    <img class="dBOT" src="{% static "chatimg/deadspyBOT.png"%}">
+    <style>
+        body {
+          background-image: url("/static/chatimg/519164.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+    </style>
+    <div class="chatbox">
+        <div class="chatlogs">
+            {% for Uchat,Bchat in CHATS %}
+                <div class="chat self"><div class="user-photo"><img src="{% static "chatimg/.JarvisYou.png"%}"></div><p class="chat-message">{{ Uchat }} </p></div><div class="chat friend"><div class="user-photo"><img src="{% static "chatimg/.jarvis.png"%}"></div><p class="chat-message">{{ Bchat|linebreaksbr }}</p></div>  
+            {% endfor %}
+        </div>
+        <div class="chat-form">
+            <form action="received_message">
+                <input type="text" name="your_message" id="" autofocus="autofocus">
+                <input type="submit" value="SEND">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
